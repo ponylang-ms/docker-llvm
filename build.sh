@@ -23,7 +23,8 @@ cd "llvm-${llvm_version}.src"
 
 # Build and install LLVM from source.
 mkdir build && cd build
-cmake .. && cmake --build .
+cmake -DCMAKE_BUILD_TYPE=MinSizeRel ..
+cmake --build .
 cmake --build . --target install
 
 # Cleanup LLVM source directory.
